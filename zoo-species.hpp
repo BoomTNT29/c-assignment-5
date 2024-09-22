@@ -16,7 +16,7 @@ public:
 
 	int Set_name(string name);
 	int Set_count(int count);
-	virtual int Print() = 0;
+	virtual int Print();
 
 	string get_name();
 	int get_count();
@@ -31,7 +31,8 @@ public:
 	int Set_diet_type(diet_type dt);
 	int Print();
 
-	diet_type get_diet_type();
+	string get_diet_type();
+	int get_diet_type(string, diet_type &); // this converts string to enum
 };
 
 class Reptile : public Zoo_species {
@@ -43,7 +44,8 @@ public:
 	int Set_feed_size(feed_size fs);
 	int Print();
 
-	feed_size get_feed_size();
+	string get_feed_size();
+	int get_feed_size(string, feed_size &);  // this converts string to enum
 };
 
 class Bird : public Zoo_species {
@@ -55,7 +57,8 @@ public:
 	int Set_bird_feed(bird_feed bf);
 	int Print();
 
-	bird_feed get_bird_feed();
+	string get_bird_feed();
+	int get_bird_feed(string, feed_size &); // this converts string to enum
 };
 
 class Aquatic : public Zoo_species {
@@ -67,5 +70,6 @@ public:
 	int Set_aqua_feed(aqua_feed af);
 	int Print();
 
-	aqua_feed get_aqua_feed();
+	string get_aqua_feed();
+	int get_aqua_feed(string, aqua_feed &); // this converts string to enum
 };
