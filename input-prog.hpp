@@ -1,8 +1,8 @@
 #ifndef INPUT_PROG_HPP
 #define INPUT_PROG_HPP
 
-#include <vector>
 #include <string>
+#include <vector>
 
 using namespace std;
 
