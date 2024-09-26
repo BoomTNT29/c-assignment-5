@@ -40,6 +40,7 @@ int main(void) {
       for (int i = mp + rp + bp; i < animals.size(); i++)
         animals[i]->Print(ofile);
 
+			ofile.close();
       return 1;
     }
 
@@ -83,21 +84,21 @@ int main(void) {
 						break;
 					}
 			} else if (type == "R") {
-				for (int i = mp; i < rp; i++)
+				for (int i = mp; i < rp + mp; i++)
 					if (animals[i]->get_name() == name) {
 						animals[i]->Set_count(animals[i]->get_count() + count);
 						flag = true;
 						break;
 					}
 			} else if (type == "B") {
-				for (int i = rp; i < bp; i++)
+				for (int i = rp + mp; i < bp + mp + rp; i++)
 					if (animals[i]->get_name() == name) {
 						animals[i]->Set_count(animals[i]->get_count() + count);
 						flag = true;
 						break;
 					}
 			} else if (type == "Q") {
-				for (int i = bp; i < animals.size(); i++)
+				for (int i = bp + mp + rp; i < animals.size(); i++)
 					if (animals[i]->get_name() == name) {
 						animals[i]->Set_count(animals[i]->get_count() + count);
 						flag = true;
